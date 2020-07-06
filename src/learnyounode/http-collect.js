@@ -3,7 +3,7 @@ const http = require('http')
 http.get(process.argv[2], res => {
     let outStr = ''
     
-    res.on(err, console.error)
+    res.on('error', console.error)
     
     res.setEncoding('utf-8')
     res.on('data', data => outStr += data)
